@@ -7,9 +7,10 @@ export default function Navbar() {
   return (
     <header id="navbar">
       <NavLink id="brand" to="/">
-        <p>Frontend Template</p>
+        <p>Home</p>
       </NavLink>
       <nav>
+        <NavLink to="/events">Events</NavLink>
         {token ? (
           <button onClick={logout}>Log out</button>
         ) : (

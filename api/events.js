@@ -11,7 +11,7 @@ import db from "#db/client";
 router.route("/").get(async (req, res) => {
   try {
     const events = await getEvents();
-    res.json(events);
+    res.json([events]);
   } catch (error) {
     console.error("Error getting events:", error);
     res.status(500).send("Internal server error");
