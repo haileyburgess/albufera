@@ -6,6 +6,7 @@ export default function Layout() {
   return (
     <>
       <Navbar />
+      <header class="header">Albufera Paella Club</header>
       <main>
         <Outlet />
       </main>
