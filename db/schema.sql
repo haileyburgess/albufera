@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS contacts;
 
 CREATE TABLE users (
   id serial PRIMARY KEY,
-  username text NOT NULL UNIQUE,
+  username text NOT NULL,
   password varchar NOT NULL
 );
 
@@ -21,5 +21,5 @@ CREATE TABLE contacts(
   email varchar(225) NOT NULL, 
   phone integer NOT NULL,
   message text NOT NULL,
-  created_date date NOT NULL
+  created_date TIMESTAMP NOT NULL DEFAULT NOW()
 );
