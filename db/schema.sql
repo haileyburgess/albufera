@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS contacts;
 CREATE TABLE users (
   id serial PRIMARY KEY,
   username text NOT NULL UNIQUE,
-  password text NOT NULL
+  password varchar NOT NULL
 );
 
 CREATE TABLE events (
