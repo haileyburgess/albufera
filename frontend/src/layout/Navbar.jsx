@@ -5,18 +5,31 @@ import { useAuth } from "../auth/AuthContext";
 export default function Navbar() {
   const { token, logout } = useAuth();
   return (
-      <nav class="navbar">
-        <ul>
+    <nav className="navbar">
+      <ul>
+        <li>
           <NavLink id="brand" to="/">
             <p>Home</p>
           </NavLink>
+        </li>
+        <li>
           <NavLink to="/events">Events</NavLink>
-          {token ? (
-            <button onClick={logout}>Log out</button>
-          ) : (
+        </li>
+        {token ? (
+          <>
+            <li>
+              <button onClick={logout}>Log out</button>
+            </li>
+            <li>
+              <NavLink to="/admin">Admin Portal</NavLink>
+            </li>
+          </>
+        ) : (
+          <li>
             <NavLink to="/login">Log in</NavLink>
-          )}
-        </ul>
-      </nav>
+          </li>
+        )}
+      </ul>
+    </nav>
   );
 }
