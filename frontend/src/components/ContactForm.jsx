@@ -15,7 +15,7 @@ export default function ContactForm() {
       [name]: value,
     }));
   };
-
+  const [success, setSuccess] = useState("");
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -27,9 +27,9 @@ export default function ContactForm() {
       if (!response.ok) {
         throw new Error("Submission failed");
       }
-      alert("Form submitted successfully!");
+      setSuccess("Form submitted successfully!");
     } catch (error) {
-      alert(error.message);
+      setSuccess("Submission failed");
     }
   };
   return (
@@ -71,6 +71,7 @@ export default function ContactForm() {
         />
       </label>
       <input className="button" type="submit" />
+      {success && <div>{success}</div>}
     </form>
   );
 }
