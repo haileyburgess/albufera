@@ -1,5 +1,14 @@
-* {
-  font-family: Arial, Helvetica, sans-serif;
+body {
+  background-color: #f2e6ce;
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+body a:link {
+  color: #2328fa;
 }
 
 @font-face {
@@ -16,10 +25,9 @@
   font-size: 15vh;
   align-items: center;
   justify-content: center;
+  color: #2328fa;
 }
-.navbar {
-  background-color: #f2e6ce;
-}
+
 nav ul {
   display: flex;
   justify-content: space-evenly;
@@ -28,4 +36,23 @@ nav ul {
   margin: 0;
   padding: 0;
   gap: 32px;
+  border: solid #2328fa 3px;
+  border-radius: 5px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 60vh;
+}
+.container label {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.button {
+  border: solid #2328fa 3px;
+  border-radius: 5px;
+  background-color: #f2e6ce;
 }

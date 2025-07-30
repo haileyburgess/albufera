@@ -15,6 +15,9 @@ export default function Navbar() {
         <li>
           <NavLink to="/events">Events</NavLink>
         </li>
+        <li>
+          <NavLink to="/contact">Get in touch</NavLink>
+        </li>
         {token ? (
           <>
             <li>
