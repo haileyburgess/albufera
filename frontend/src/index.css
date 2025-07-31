@@ -6,17 +6,17 @@ body {
   font-style: normal;
   font-variation-settings: "wdth" 100;
 }
-
-body a:link {
-  color: #2328fa;
-}
-
 @font-face {
   font-family: "header-font";
   src: url("./src/hk-grotesk/HKGrotesk-Bold.otf") format("opentype");
   font-weight: bold;
   font-style: normal;
 }
+
+body a:link {
+  color: #2328fa;
+}
+
 .header {
   display: flex;
   font-family: "header-font";

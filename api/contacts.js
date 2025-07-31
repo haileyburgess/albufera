@@ -1,4 +1,4 @@
-import { createContact } from "#db/queries/contacts";
+import { createContact, getContacts } from "#db/queries/contacts";
 import requireBody from "#middleware/requireBody";
 import requireUser from "#middleware/requireUser";
 import express from "express";
@@ -23,3 +23,12 @@ router
   );
 
 // Route to GET all contacts (protected route)
+router.route("/").get(requireUser, async (req, res) => {
+  try {
+    const contacts = await getContacts();
+    res.json(contacts);
+  } catch (error) {
+    console.error("Error retrieving contacts", error);
+    res.status(500).send("Internal server error");
+  }
+});
