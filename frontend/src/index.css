@@ -26,6 +26,7 @@ body a:link {
   align-items: center;
   justify-content: center;
   color: #2328fa;
+  padding: 10px;
 }
 
 nav ul {
@@ -59,10 +60,11 @@ nav ul {
 .event {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   border: solid #2328fa 3px;
   border-radius: 5px;
   padding: 10px;
+  margin: 10px;
   align-items: center;
+  width: 50vw;
   line-height: 2;
 }

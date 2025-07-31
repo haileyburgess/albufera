@@ -13,18 +13,24 @@ export default function Navbar() {
           </NavLink>
         </li>
         <li>
+          <NavLink to="/about">About Us</NavLink>
+        </li>
+        <li>
           <NavLink to="/events">Events</NavLink>
         </li>
         <li>
           <NavLink to="/contact">Get in touch</NavLink>
         </li>
+
         {token ? (
           <>
             <li>
-              <button onClick={logout}>Log out</button>
+              <NavLink to="/admin">Admin Portal</NavLink>
             </li>
             <li>
-              <NavLink to="/admin">Admin Portal</NavLink>
+              <button className="button" onClick={logout}>
+                Log out
+              </button>
             </li>
           </>
         ) : (

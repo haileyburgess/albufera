@@ -20,8 +20,6 @@ export async function getEvents() {
     SELECT *
     FROM events
     `;
-  const {
-    rows: [events],
-  } = await db.query(sql);
-  return events;
+  const { rows } = await db.query(sql);
+  return rows;
 }

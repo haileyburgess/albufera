@@ -4,6 +4,7 @@ import Login from "./auth/Login";
 import Register from "./auth/Register";
 import Events from "./components/Events";
 import ContactForm from "./components/ContactForm";
+import About from "./components/AboutPage";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/events" element={<Events />} />
         <Route path="/contact" element={<ContactForm />} />
+        <Route path="/about" element={<About />} />
       </Route>
     </Routes>
   );
