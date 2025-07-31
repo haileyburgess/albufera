@@ -28,6 +28,7 @@ export default function ContactForm() {
         throw new Error("Submission failed");
       }
       setSuccess("Form submitted successfully!");
+      setInputs({ name: "", email: "", message: "" });
     } catch (error) {
       setSuccess("Submission failed");
     }

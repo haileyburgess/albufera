@@ -56,3 +56,13 @@ nav ul {
   border-radius: 5px;
   background-color: #f2e6ce;
 }
+.event {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: solid #2328fa 3px;
+  border-radius: 5px;
+  padding: 10px;
+  align-items: center;
+  line-height: 2;
+}
