@@ -15,10 +15,12 @@ export default function Contacts() {
   if (loading || !contacts) return <p>Loading...</p>;
   if (error) return <p>Sorry! There was a bug. {error}</p>;
 
+  const contactsArray = Array.isArray(contacts) ? contacts : [contacts];
+
   console.log(contacts);
   return (
     <ul>
-      {[contacts].map((contact) => (
+      {contactsArray.map((contact) => (
         <ContactsListItem key={contact.id} contact={contact} />
       ))}
     </ul>

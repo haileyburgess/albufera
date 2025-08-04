@@ -19,8 +19,6 @@ export async function getContacts() {
     SELECT *
     FROM contacts
     `;
-  const {
-    rows: [contacts],
-  } = await db.query(sql);
-  return contacts;
+  const { rows } = await db.query(sql);
+  return rows;
 }
