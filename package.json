@@ -13,6 +13,8 @@
     "db:reset": "npm run db:schema && npm run db:seed"
   },
   "dependencies": {
+    "@mui/material": "^7.2.0",
+    "@mui/x-data-grid": "^8.9.2",
     "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
     "express": "^5.1.0",

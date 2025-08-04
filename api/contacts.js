@@ -1,6 +1,7 @@
 import { createContact, getContacts } from "#db/queries/contacts";
 import requireBody from "#middleware/requireBody";
 import requireUser from "#middleware/requireUser";
+import getUserFromToken from "#middleware/getUserFromToken";
 import express from "express";
 const router = express.Router();
 export default router;
@@ -23,10 +24,15 @@ router
   );
 
 // Route to GET all contacts (protected route)
-router.route("/").get(requireUser, async (req, res) => {
+
+router.route("/").get(getUserFromToken, async (req, res) => {
   try {
-    const contacts = await getContacts();
-    res.json(contacts);
+    if (req.user) {
+      const contacts = await getContacts();
+      res.json(contacts);
+    } else {
+      res.json("You do not have access to this page.");
+    }
   } catch (error) {
     console.error("Error retrieving contacts", error);
     res.status(500).send("Internal server error");
