@@ -5,12 +5,13 @@ import Register from "./auth/Register";
 import Events from "./components/Events";
 import ContactForm from "./components/Contact";
 import About from "./components/AboutContainer";
+import HomePage from "./pages/HomePage";
 
 export default function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route index element={<p>Home page</p>} />
+        <Route index element={<HomePage />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/events" element={<Events />} />

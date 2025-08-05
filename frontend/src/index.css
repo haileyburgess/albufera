@@ -85,3 +85,10 @@ nav ul {
   border-width: 5px;
   font-family: "Merriweather", serif;
 }
+.about {
+  display: flex;
+  justify-content: flex-start;
+  width: 30%;
+  margin: 20px;
+  padding: 20px;
+}

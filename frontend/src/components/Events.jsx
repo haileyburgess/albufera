@@ -40,29 +40,3 @@ export default function Events() {
     </div>
   );
 }
-
-/* /* //   return (
-//     <ul>
-//       {events.map((event) => (
-        <EventListItem key={event.id} event={event} />
-      ))}
-    </ul>
-  );
-}
-// function EventListItem({ event }) { */
-/* const dateObject = new Date(event.date);
-  const formattedDate = dateObject.toLocaleDateString("en-US", {
-    month: "2-digit",
-    day: "2-digit",
-    year: "numeric",
-  });
-  return (
-    <div className="container">
-      <div className="event">
-        <div>{event.location}</div>
-        <div>{formattedDate}</div>
-        <div>{event.description}</div>
-      </div>
-    </div>
-  );
-} */
