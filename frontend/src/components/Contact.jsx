@@ -37,6 +37,7 @@ export default function Contacts() {
   const { data: contacts, loading, error } = useQuery("/contact", "contact");
 
   const contactsArray = Array.isArray(contacts) ? contacts : [contacts];
+
   if (!isAuthenticated) {
     return <ContactForm />;
   }
