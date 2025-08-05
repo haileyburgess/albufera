@@ -16,7 +16,7 @@ export async function createContact(name, email, phone, message) {
 
 export async function getContacts() {
   const sql = `
-    SELECT *
+    SELECT DISTINCT *
     FROM contacts
     `;
   const { rows } = await db.query(sql);

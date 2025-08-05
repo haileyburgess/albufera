@@ -9,6 +9,15 @@ import { red } from "@mui/material/colors";
 // DataGrid implementation adapted from MUI docs at https://mui.com/material-ui/react-table/
 
 const columns = [
+  {
+    field: "created_date",
+    headerName: "Date",
+    width: 120,
+    valueFormatter: (params) => {
+      const date = new Date(params.value);
+      return date.toLocaleDateString();
+    },
+  },
   { field: "name", headerName: "Name", width: 180 },
   { field: "email", headerName: "Email", width: 180 },
   { field: "phone", headerName: "Phone Number", width: 110 },
