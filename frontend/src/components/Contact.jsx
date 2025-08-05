@@ -2,50 +2,77 @@ import useQuery from "../api/useQuery";
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { useAuth } from "../auth/AuthContext";
+import { DataGrid } from "@mui/x-data-grid";
+import Paper from "@mui/material/Paper";
+
+const columns = [
+  { field: "name", headerName: "Name", width: 130 },
+  { field: "email", headerName: "Email", width: 130 },
+  { field: "phone", headerName: "Phone Number", width: 90 },
+  {
+    field: "message",
+    headerName: "Message",
+    type: "text",
+    width: 130,
+  },
+];
+
+const paginationModel = { page: 0, pageSize: 5 };
 
 export default function Contacts() {
   const authData = useAuth();
   const isAuthenticated = authData && authData.token;
   const { data: contacts, loading, error } = useQuery("/contact", "contact");
 
+  const contactsArray = Array.isArray(contacts) ? contacts : [contacts];
   if (!isAuthenticated) {
     return <ContactForm />;
   }
 
   if (loading || !contacts) return <p>Loading...</p>;
   if (error) return <p>Sorry! There was a bug. {error}</p>;
-
-  const contactsArray = Array.isArray(contacts) ? contacts : [contacts];
-
-  console.log(contacts);
   return (
-    <ul>
-      {contactsArray.map((contact) => (
-        <ContactsListItem key={contact.id} contact={contact} />
-      ))}
-    </ul>
+    <Paper sx={{ height: 400, width: "100%" }}>
+      <DataGrid
+        rows={contactsArray}
+        columns={columns}
+        initialState={{ pagination: { paginationModel } }}
+        pageSizeOptions={[5, 10]}
+        checkboxSelection
+        sx={{ border: 0 }}
+      />
+    </Paper>
   );
 }
 
-function ContactsListItem({ contact }) {
-  const dateObject = new Date(contact.date);
-  const formattedDate = dateObject.toLocaleDateString("en-US", {
-    month: "2-digit",
-    day: "2-digit",
-    year: "numeric",
-  });
-  return (
-    <div className="container">
-      <div>
-        <div>{contact.name}</div>
-        <div>{contact.email}</div>
-        <div>{contact.phone}</div>
-        <div>{contact.message}</div>
-        <div>{formattedDate}</div>
-      </div>
-    </div>
-  );
-}
+//   return (
+//     <ul>
+//       {contactsArray.map((contact) => (
+//         <ContactsListItem key={contact.id} contact={contact} />
+//       ))}
+//     </ul>
+//   );
+// }
+
+// function ContactsListItem({ contact }) {
+//   const dateObject = new Date(contact.date);
+//   const formattedDate = dateObject.toLocaleDateString("en-US", {
+//     month: "2-digit",
+//     day: "2-digit",
+//     year: "numeric",
+//   });
+//   return (
+//     <div className="container">
+//       <div>
+//         <div>{contact.name}</div>
+//         <div>{contact.email}</div>
+//         <div>{contact.phone}</div>
+//         <div>{contact.message}</div>
+//         <div>{formattedDate}</div>
+//       </div>
+//     </div>
+//   );
+// }
 
 export function ContactForm() {
   const [inputs, setInputs] = useState({

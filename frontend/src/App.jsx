@@ -1,10 +1,9 @@
-import { Route, Routes } from "react-router";
+import { Route, Routes } from "react-router-dom";
 import Layout from "./layout/Layout";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
 import Events from "./components/Events";
 import ContactForm from "./components/Contact";
-import Contacts from "./components/Contact";
 import About from "./components/AboutContainer";
 
 export default function App() {
@@ -15,9 +14,8 @@ export default function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/events" element={<Events />} />
-        <Route path="/contact" element={<ContactForm />} />
         <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contacts />} />
+        <Route path="/contact" element={<ContactForm />} />
       </Route>
     </Routes>
   );

@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router-dom";
 
 import { useAuth } from "./AuthContext";
 
 /** A form that allows users to log into an existing account. */
 export default function Login() {
-  const { login } = useAuth();
+  const { login } = useAuth(null);
   const navigate = useNavigate();
 
   const [error, setError] = useState(null);
@@ -24,7 +24,12 @@ export default function Login() {
   return (
     <>
       <h1>Log in to your account</h1>
-      <form action={onLogin}>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          onLogin(new FormData(e.target));
+        }}
+      >
         <label>
           Username
           <input type="username" name="username" required />
