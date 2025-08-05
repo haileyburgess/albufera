@@ -4,16 +4,19 @@ import ReactDOM from "react-dom/client";
 import { useAuth } from "../auth/AuthContext";
 import { DataGrid } from "@mui/x-data-grid";
 import Paper from "@mui/material/Paper";
+import { red } from "@mui/material/colors";
+
+// DataGrid implementation adapted from MUI docs at https://mui.com/material-ui/react-table/
 
 const columns = [
-  { field: "name", headerName: "Name", width: 130 },
-  { field: "email", headerName: "Email", width: 130 },
-  { field: "phone", headerName: "Phone Number", width: 90 },
+  { field: "name", headerName: "Name", width: 180 },
+  { field: "email", headerName: "Email", width: 180 },
+  { field: "phone", headerName: "Phone Number", width: 110 },
   {
     field: "message",
     headerName: "Message",
     type: "text",
-    width: 130,
+    width: 150,
   },
 ];
 
@@ -32,16 +35,19 @@ export default function Contacts() {
   if (loading || !contacts) return <p>Loading...</p>;
   if (error) return <p>Sorry! There was a bug. {error}</p>;
   return (
-    <Paper sx={{ height: 400, width: "100%" }}>
-      <DataGrid
-        rows={contactsArray}
-        columns={columns}
-        initialState={{ pagination: { paginationModel } }}
-        pageSizeOptions={[5, 10]}
-        checkboxSelection
-        sx={{ border: 0 }}
-      />
-    </Paper>
+    <div>
+      <h2>Contacts and Messages</h2>
+      <Paper className="contactsTable">
+        <DataGrid
+          rows={contactsArray}
+          columns={columns}
+          initialState={{ pagination: { paginationModel } }}
+          pageSizeOptions={[5, 10]}
+          checkboxSelection
+          sx={{ border: 0 }}
+        />
+      </Paper>
+    </div>
   );
 }
 
