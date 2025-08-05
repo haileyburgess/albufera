@@ -3,8 +3,8 @@ import Layout from "./layout/Layout";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
 import Events from "./components/Events";
-import ContactForm from "./components/Contacts";
-import Contacts from "./components/Contacts";
+import ContactForm from "./components/Contact";
+import Contacts from "./components/Contact";
 import About from "./components/AboutContainer";
 
 export default function App() {

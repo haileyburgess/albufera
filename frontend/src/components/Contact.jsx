@@ -17,6 +17,7 @@ export default function Contacts() {
 
   const contactsArray = Array.isArray(contacts) ? contacts : [contacts];
 
+  console.log(contacts);
   return (
     <ul>
       {contactsArray.map((contact) => (
@@ -45,9 +46,6 @@ function ContactsListItem({ contact }) {
     </div>
   );
 }
-
-
-// Public route results (not logged-in) 
 
 export function ContactForm() {
   const [inputs, setInputs] = useState({
