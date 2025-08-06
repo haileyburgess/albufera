@@ -82,27 +82,23 @@ nav ul {
 }
 
 /* Events components */
-.event {
-  display: flex;
-  flex-direction: column;
-  border: solid #2328fa 3px;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px;
-  align-items: center;
-  width: 50vw;
-  line-height: 2;
-}
 
 .cards {
+  display: flex;
+  flex-direction: column;
   background-color: #6868ee;
   height: 2;
-  width: auto;
+  width: 50%;
   margin: 20px;
   border-color: #6868ee;
   border-style: solid;
   border-width: 5px;
   font-family: "Merriweather", serif;
+}
+.eventsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 /* Home page components */
 .about {
@@ -125,11 +121,11 @@ nav ul {
 .home {
   display: grid;
   grid-template-columns: 50% 30% 20%;
-  grid-template-rows: 30% 20% 40%;
+  grid-template-rows: 40% 20% 40%;
 }
 .homeEvents {
   display: grid;
-  grid-row: 3;
+  grid-row: 2, 2;
   grid-column: 1;
   margin: 20px;
 }
