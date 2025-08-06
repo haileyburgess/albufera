@@ -94,45 +94,51 @@ export function ContactForm() {
     }
   };
   return (
-    <form className="container" onSubmit={handleSubmit}>
-      <label>
-        Name
-        <input
-          type="text"
-          name="name"
-          value={inputs.name || ""}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Email address
-        <input
-          type="email"
-          name="email"
-          value={inputs.email || ""}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Phone
-        <input
-          type="tel"
-          name="phone"
-          value={inputs.phone || ""}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Message
-        <textarea
-          type="text"
-          name="message"
-          value={inputs.message || ""}
-          onChange={handleChange}
-        />
-      </label>
-      <input className="button" type="submit" />
-      {success && <div>{success}</div>}
-    </form>
+    <div className="container">
+      <form className="form" onSubmit={handleSubmit}>
+        <p className="description">
+          Have questions about our events? <br></br>Want to book a private paella
+          experience for your next celebration?<br></br> We'd love to hear from you!
+        </p>
+        <label>
+          Name
+          <input
+            type="text"
+            name="name"
+            value={inputs.name || ""}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Email address
+          <input
+            type="email"
+            name="email"
+            value={inputs.email || ""}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Phone
+          <input
+            type="tel"
+            name="phone"
+            value={inputs.phone || ""}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Message
+          <textarea
+            type="text"
+            name="message"
+            value={inputs.message || ""}
+            onChange={handleChange}
+          />
+        </label>
+        <input className="button" type="submit" />
+        {success && <div>{success}</div>}
+      </form>
+    </div>
   );
 }
