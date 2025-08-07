@@ -85,7 +85,7 @@ export function ContactForm() {
     try {
       const response = await fetch("http://localhost:3000/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json"},
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(inputs),
       });
       if (!response.ok) {
@@ -98,7 +98,7 @@ export function ContactForm() {
     }
   };
   return (
-    <form className="container" onSubmit={handleSubmit}>
+    <form className="form" onSubmit={handleSubmit}>
       <label>
         Name
         <input

@@ -57,9 +57,9 @@ nav ul {
 .form {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  /* justify-content: space-between; */
   align-items: center;
-  align-content: center;
+  /* align-content: center; */
   height: 80vh;
 }
 
@@ -70,10 +70,9 @@ nav ul {
 }
 .contactsTable {
   display: flex;
-  border-color: #6868ee;
+  border-color: #d74e09;
   border-style: solid;
   border-width: 5px;
-  width: 60%;
 }
 .description {
   display: flex;
@@ -89,7 +88,7 @@ nav ul {
   background-color: #6868ee38;
   height: 2;
   margin: 20px;
-  border-color: #6868ee;
+  border-color: #d74e09;
   border-style: solid;
   border-width: 5px;
   font-family: "Merriweather", serif;
@@ -98,31 +97,47 @@ nav ul {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 40px;
 }
 /* Home page components */
+.home {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 30% 30% 40%;
+  margin: 30px;
+}
+
 .about {
   display: grid;
   grid-column: 1, 2;
-  grid-row: 3, 3;
-  margin: 20px;
+  grid-row: 1;
   font-size: 1.1em;
 }
 
-.hero {
+.imageGrid {
   display: grid;
-  border-radius: 50%;
-  grid-row: 1, 2;
-  grid-column: 3, 2;
-  margin-left: 40px;
-  margin-top: 10px;
+  grid-row: 2 / 3;
+  grid-column: 1;
+  justify-content: center;
+  margin-top: 20px;
 }
-.home {
-  display: grid;
-  grid-template-columns: 50% 30% 20%;
-  grid-template-rows: 40% 20% 40%;
-}
+
 .homeEvents {
   display: grid;
-  grid-row: 2, 2;
-  grid-column: 1;
+  grid-row: 2 / 3;
+  grid-column: 2;
+  margin-top: 70px;
+}
+
+.ctas {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+.logo {
+  display: grid;
+  grid-column: 2;
+  grid-row: 1/ 2;
+  justify-content: center;
+  align-items: center;
 }

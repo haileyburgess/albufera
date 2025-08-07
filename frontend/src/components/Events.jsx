@@ -72,9 +72,15 @@ export function FutureEvents() {
 
   return (
     <div>
-      <h1>Upcoming Events</h1>
-      <Button onClick={handleClick}>View Past Events</Button>
-      <Button onClick={handleContactClick}>Book Private Event</Button>
+      <h1 className="eventsHeader">Upcoming Events</h1>
+      <div className="ctas">
+        <Button variant="contained" onClick={handleClick}>
+          View Past Events
+        </Button>
+        <Button variant="contained" onClick={handleContactClick}>
+          Book Private Event
+        </Button>
+      </div>
       {eventsArray
         .filter((event) => new Date(event.date) > new Date())
         .map((event) => (

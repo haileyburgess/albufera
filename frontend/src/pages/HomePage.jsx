@@ -27,11 +27,19 @@ export default function HomePage() {
           </p>
         </div>
       </div>
-      <div className="hero">
+      <div className="imageGrid">
         <HomepageImageList />
       </div>
       <div className="homeEvents">
         <FutureEvents />
+      </div>
+      <div className="logo">
+        <img
+          src="/assets/logo.png"
+          width={350}
+          height={350}
+          alt="Drawing of paella and wine glasses"
+        ></img>
       </div>
     </div>
   );
