@@ -25,7 +25,7 @@ const columns = [
     field: "message",
     headerName: "Message",
     type: "text",
-    width: 150,
+    width: 600,
   },
 ];
 
@@ -97,8 +97,9 @@ export function ContactForm() {
     <div className="container">
       <form className="form" onSubmit={handleSubmit}>
         <p className="description">
-          Have questions about our events? <br></br>Want to book a private paella
-          experience for your next celebration?<br></br> We'd love to hear from you!
+          Have questions about our events? <br></br>Want to book a private
+          paella experience for your next celebration?<br></br> We'd love to
+          hear from you!
         </p>
         <label>
           Name

@@ -19,7 +19,7 @@ CREATE TABLE contacts(
   id serial PRIMARY KEY,
   name text NOT NULL,
   email varchar(225) NOT NULL, 
-  phone integer NOT NULL,
+  phone varchar(15) NOT NULL,
   message text NOT NULL,
   created_date TIMESTAMP NOT NULL DEFAULT NOW()
 );

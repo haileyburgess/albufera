@@ -67,6 +67,7 @@ nav ul {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  padding: 15px;
 }
 .contactsTable {
   display: flex;
