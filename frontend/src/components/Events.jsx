@@ -63,11 +63,18 @@ export function FutureEvents() {
     navigate("/events");
   };
 
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    navigate("/contact");
+  };
+
   // MUI Card implementation adapted from MUI docs at https://mui.com/material-ui/react-card/
 
   return (
     <div>
       <h1>Upcoming Events</h1>
+      <Button onClick={handleClick}>View Past Events</Button>
+      <Button onClick={handleContactClick}>Book Private Event</Button>
       {eventsArray
         .filter((event) => new Date(event.date) > new Date())
         .map((event) => (
@@ -86,7 +93,6 @@ export function FutureEvents() {
             </CardActions> */}
           </Card>
         ))}
-      <Button onClick={handleClick}>View Past Events</Button>
     </div>
   );
 }

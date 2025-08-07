@@ -85,10 +85,9 @@ nav ul {
 
 .cards {
   display: flex;
-  flex-direction: column;
-  background-color: #6868ee;
+  flex-direction: row;
+  background-color: #6868ee38;
   height: 2;
-  width: 50%;
   margin: 20px;
   border-color: #6868ee;
   border-style: solid;
@@ -126,5 +125,4 @@ nav ul {
   display: grid;
   grid-row: 2, 2;
   grid-column: 1;
-  margin: 20px;
 }
