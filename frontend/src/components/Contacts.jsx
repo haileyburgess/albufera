@@ -63,35 +63,6 @@ export default function Contacts() {
   );
 }
 
-//   return (
-//     <ul>
-//       {contactsArray.map((contact) => (
-//         <ContactsListItem key={contact.id} contact={contact} />
-//       ))}
-//     </ul>
-//   );
-// }
-
-// function ContactsListItem({ contact }) {
-//   const dateObject = new Date(contact.date);
-//   const formattedDate = dateObject.toLocaleDateString("en-US", {
-//     month: "2-digit",
-//     day: "2-digit",
-//     year: "numeric",
-//   });
-//   return (
-//     <div className="container">
-//       <div>
-//         <div>{contact.name}</div>
-//         <div>{contact.email}</div>
-//         <div>{contact.phone}</div>
-//         <div>{contact.message}</div>
-//         <div>{formattedDate}</div>
-//       </div>
-//     </div>
-//   );
-// }
-
 // Public route results (not logged-in)
 
 export function ContactForm() {
@@ -114,7 +85,7 @@ export function ContactForm() {
     try {
       const response = await fetch("http://localhost:3000/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json"},
         body: JSON.stringify(inputs),
       });
       if (!response.ok) {

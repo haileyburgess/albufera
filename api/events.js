@@ -19,7 +19,7 @@ router.route("/").get(async (req, res) => {
   }
 });
 
-// Route to POST event (protected route - later on)
+// Route to POST event (protected route)
 router
   .route("/")
   .post(

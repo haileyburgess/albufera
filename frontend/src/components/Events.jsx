@@ -7,6 +7,8 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
+import CalendarButton from "./CalendarButton";
+import { EventForm } from "./CreateEvent";
 
 export default function Events() {
   const { data: events, loading, error } = useQuery("/events", "events");
@@ -40,6 +42,7 @@ export default function Events() {
             </CardActions>
           </Card>
         ))}
+      <EventForm></EventForm>
     </div>
   );
 }
@@ -65,7 +68,6 @@ export function FutureEvents() {
   return (
     <div>
       <h1>Upcoming Events</h1>
-      <Button onClick={handleClick}>View Past Events</Button>
       {eventsArray
         .filter((event) => new Date(event.date) > new Date())
         .map((event) => (
@@ -79,11 +81,12 @@ export function FutureEvents() {
               </Typography>
               <Typography variant="body2">{event.description}</Typography>
             </CardContent>
-            <CardActions>
-              <Button size="small">RSVP</Button>
-            </CardActions>
+            {/* <CardActions>
+              <CalendarButton event={event}></CalendarButton>
+            </CardActions> */}
           </Card>
         ))}
+      <Button onClick={handleClick}>View Past Events</Button>
     </div>
   );
 }
