@@ -2,7 +2,7 @@ import express from "express";
 const router = express.Router();
 export default router;
 
-import { createEvent, getEvents } from "#db/queries/events";
+import { createEvent, deleteEvent, getEvents } from "#db/queries/events";
 import requireBody from "#middleware/requireBody";
 import requireUser from "#middleware/requireUser";
 import db from "#db/client";
@@ -36,3 +36,18 @@ router
       }
     }
   );
+
+// DELETE Route (protected route)
+
+router.route("/:id").delete(async (req, res) => {
+  const { id } = req.params;
+  try {
+    const deleted = await deleteEvent(id);
+    if (!deleted) {
+      return res.status(404).send("Event not found");
+    }
+    res.status(204).send();
+  } catch (error) {
+    res.status(500).send("Server error");
+  }
+});

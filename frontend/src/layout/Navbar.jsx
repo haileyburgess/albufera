@@ -22,10 +22,10 @@ export default function Navbar() {
           <NavLink to="/contact">Get in touch</NavLink>
         </li>
 
-        {token ? (
+        {token && (
           <>
             <li>
-              <NavLink to="/admin">Admin Portal</NavLink>
+              <NavLink to="/admin">Admin</NavLink>
             </li>
             <li>
               <button className="button" onClick={logout}>
@@ -33,10 +33,6 @@ export default function Navbar() {
               </button>
             </li>
           </>
-        ) : (
-          <li>
-            <NavLink to="/login">Log in</NavLink>
-          </li>
         )}
       </ul>
     </nav>

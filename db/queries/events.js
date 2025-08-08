@@ -23,3 +23,12 @@ export async function getEvents() {
   const { rows } = await db.query(sql);
   return rows;
 }
+
+export async function deleteEvent(id) {
+  const sql = `
+  DELETE FROM events
+  WHERE id = $1
+  `;
+  const { rows } = await db.query(sql, [id]);
+  return rows[0];
+}

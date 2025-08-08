@@ -9,6 +9,7 @@ import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 import CalendarButton from "./CalendarButton";
 import { EventForm } from "./CreateEvent";
+import { DeleteEvent } from "./DeleteEvent";
 
 export default function Events() {
   const { data: events, loading, error } = useQuery("/events", "events");
@@ -97,6 +98,9 @@ export function FutureEvents() {
             {/* <CardActions>
               <CalendarButton event={event}></CalendarButton>
             </CardActions> */}
+            <CardActions>
+              <DeleteEvent eventId={event.id} />
+            </CardActions>
           </Card>
         ))}
     </div>
