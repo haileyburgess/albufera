@@ -104,14 +104,14 @@ nav ul {
 .home {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 30% 30% 40%;
+  grid-template-rows: 40% 10% 40%;
   margin: 30px;
 }
 
 .about {
   display: grid;
   grid-column: 1, 2;
-  grid-row: 1;
+  grid-row: 1/ 2;
   font-size: 1.1em;
 }
 
@@ -120,14 +120,14 @@ nav ul {
   grid-row: 2 / 3;
   grid-column: 1;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .homeEvents {
   display: grid;
   grid-row: 2 / 3;
   grid-column: 2;
-  margin-top: 70px;
+  margin-top: 30px;
 }
 
 .ctas {

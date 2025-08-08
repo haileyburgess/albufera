@@ -6,24 +6,30 @@ export default function HomePage() {
   return (
     <div className="home">
       <div>
+        <h3>From Valencia to Brooklyn</h3>
         <p className="about">
-          We are a Brooklyn-based duo serving authentic Valencian paella - The
-          head chef, Miguel, is a native of Valencia, Spain. We are committed to
-          fresh ingredients and to sourcing all of our bomba rice, saffron, and
-          paprika directly from Valencia.
+          We're a Brooklyn-based pop-up dedicated to making real paella the way
+          it's done in Valencia. Head chef Miguel is a native of the city and
+          brings a passion for traditional technique and flavor. Everything
+          starts with the right ingredients—bomba rice, saffron, and smoked
+          paprika—sourced directly from Spain.
         </p>
         <div>
+          <h3>Where Paella Began</h3>
           <p className="about">
-            La Albufera is the Valencia lagoon where paella was invented - Local
-            farmers used ingredients on hand to create a beloved dish of
-            chicken, rabbit, bajoqueta, and garrafo.
+            Our name, La Albufera, comes from the lagoon near Valencia where
+            paella originated. It began as a dish made by farmers with what was
+            around: chicken, rabbit, flat green beans (bajoqueta), and large
+            white beans (garrafo). We honor that origin by staying close to the
+            classic, while also offering a few thoughtful variations.
           </p>
         </div>
+        <h3>What We Serve</h3>
         <div>
           <p className="about">
-            We prepare traditional recipies of Paella Valenciana and Paella de
-            Marisco alongside a vegetarian- and vegan-friendly offering, plus
-            winter varieties with seasonal vegetables.
+            We offer traditional Paella Valenciana, Paella de Marisco, and a
+            vegetarian/vegan option. In colder months, we add rotating seasonal
+            varieties. All of our paellas are cooked on-site and over flame.
           </p>
         </div>
       </div>
