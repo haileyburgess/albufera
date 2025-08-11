@@ -7,9 +7,10 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
-import CalendarButton from "./CalendarButton";
+// import CalendarButton from "./CalendarButton";
 import { EventForm } from "./CreateEvent";
 import { DeleteEvent } from "./DeleteEvent";
+import "add-to-calendar-button";
 
 export default function Events() {
   const { data: events, loading, error } = useQuery("/events", "events");
@@ -95,9 +96,23 @@ export function FutureEvents() {
               </Typography>
               <Typography variant="body2">{event.description}</Typography>
             </CardContent>
-            {/* <CardActions>
-              <CalendarButton event={event}></CalendarButton>
-            </CardActions> */}
+            <CardActions>
+              <add-to-calendar-button
+                className="add-to-cal"
+                name="Albufera Paella Club Pop-up"
+                options="'Apple','Google','Microsoft365'"
+                startDate={new Date(event.date).toISOString().split("T")[0]}
+                endDate={new Date(event.date).toISOString().split("T")[0]}
+                startTime="14:00"
+                endTime="20:00"
+                timeZone="America/New_York"
+                location={event.location}
+                description={
+                  event.description ||
+                  "Join us for an amazing paella experience!"
+                }
+              />
+            </CardActions>
             <CardActions>
               <DeleteEvent eventId={event.id} />
             </CardActions>

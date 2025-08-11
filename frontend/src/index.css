@@ -93,6 +93,7 @@ nav ul {
   border-style: solid;
   border-width: 5px;
   font-family: "Merriweather", serif;
+  overflow: visible !important; /* From Claude */
 }
 .eventsHeader {
   display: flex;
@@ -139,4 +140,7 @@ nav ul {
   grid-row: 1/ 2;
   justify-content: center;
   align-items: center;
+}
+.add-to-cal {
+  z-index: 1000;
 }
