@@ -4,8 +4,8 @@ import Login from "./auth/Login";
 import Register from "./auth/Register";
 import Events from "./components/Events";
 import ContactForm from "./components/Contact";
-import About from "./components/AboutContainer";
 import HomePage from "./pages/HomePage";
+import FaqAccordion from "./components/FAQContainer";
 
 export default function App() {
   return (
@@ -15,7 +15,7 @@ export default function App() {
         {/* <Route path="/register" element={<Register />} /> */}
         <Route path="/login" element={<Login />} />
         <Route path="/events" element={<Events />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/faq" element={<FaqAccordion />} />
         <Route path="/contact" element={<ContactForm />} />
       </Route>
     </Routes>

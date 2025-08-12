@@ -146,3 +146,10 @@ nav ul {
 .add-to-cal {
   z-index: 1000;
 }
+.accordion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 40px;
+  background-color: #f2e6ce;
+}

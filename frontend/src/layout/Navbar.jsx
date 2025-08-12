@@ -13,10 +13,10 @@ export default function Navbar() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/about">About Us</NavLink>
+          <NavLink to="/events">Events</NavLink>
         </li>
         <li>
-          <NavLink to="/events">Events</NavLink>
+          <NavLink to="/faq">FAQs</NavLink>
         </li>
         <li>
           <NavLink to="/contact">Get in touch</NavLink>
@@ -24,15 +24,15 @@ export default function Navbar() {
         <li className="insta">
           <a
             href="https://www.instagram.com/albuferapaellaclub/"
-            class="fa fa-instagram fa-2x"
+            className="fa fa-instagram fa-2x"
           ></a>
         </li>
 
         {token && (
           <>
-            <li>
+            {/* <li>
               <NavLink to="/admin">Admin</NavLink>
-            </li>
+            </li> */}
             <li>
               <button className="button" onClick={logout}>
                 Log out
