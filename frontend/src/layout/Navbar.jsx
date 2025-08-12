@@ -21,6 +21,12 @@ export default function Navbar() {
         <li>
           <NavLink to="/contact">Get in touch</NavLink>
         </li>
+        <li className="insta">
+          <a
+            href="https://www.instagram.com/albuferapaellaclub/"
+            class="fa fa-instagram fa-2x"
+          ></a>
+        </li>
 
         {token && (
           <>

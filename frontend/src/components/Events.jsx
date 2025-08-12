@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { EventForm } from "./CreateEvent";
 import { DeleteEvent } from "./DeleteEvent";
 import "add-to-calendar-button";
+// See this page for more info on the calendar button library: https://add-to-calendar-button.com/use-with-react
 
 export default function Events() {
   const { data: events, loading, error } = useQuery("/events", "events");
