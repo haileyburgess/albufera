@@ -2,7 +2,12 @@ import express from "express";
 const router = express.Router();
 export default router;
 
-import { createEvent, deleteEvent, getEvents } from "#db/queries/events";
+import {
+  createEvent,
+  deleteEvent,
+  getEvents,
+  updateEvent,
+} from "#db/queries/events";
 import requireBody from "#middleware/requireBody";
 import requireUser from "#middleware/requireUser";
 import db from "#db/client";
@@ -49,5 +54,23 @@ router.route("/:id").delete(async (req, res) => {
     res.status(204).send();
   } catch (error) {
     res.status(500).send("Server error");
+  }
+});
+
+// UPDATE Route (protected route)
+
+router.route("/:id").put(async (req, res) => {
+  const { id } = req.params;
+  const { date, location, description } = req.body;
+
+  try {
+    const updated = await updateEvent(id, date, location, description);
+    if (!updated) {
+      return res.status(404).json({ error: "Event not found" });
+    }
+    res.status(200).json(updated);
+  } catch (error) {
+    console.error("Update event error:", error);
+    res.status(500).json({ error: "Server error", message: error.message });
   }
 });

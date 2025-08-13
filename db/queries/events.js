@@ -32,3 +32,14 @@ export async function deleteEvent(id) {
   const { rows } = await db.query(sql, [id]);
   return rows[0];
 }
+
+export async function updateEvent(id, date, location, description) {
+  const sql = `
+    UPDATE events 
+    SET date = $2, location = $3, description = $4
+    WHERE id = $1
+    RETURNING *
+  `;
+  const { rows } = await db.query(sql, [id, date, location, description]);
+  return rows[0];
+}

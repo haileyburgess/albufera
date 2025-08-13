@@ -11,9 +11,12 @@ import { useNavigate } from "react-router-dom";
 import { EventForm } from "./CreateEvent";
 import { DeleteEvent } from "./DeleteEvent";
 import "add-to-calendar-button";
+import { UpdateEvent } from "./UpdateEvent";
+import { useLocation } from "react-router-dom";
 // See this page for more info on the calendar button library: https://add-to-calendar-button.com/use-with-react
 
 export default function Events() {
+  const location = useLocation();
   const { data: events, loading, error } = useQuery("/events", "events");
   const eventsArray = Array.isArray(events) ? events : [events];
 
@@ -77,12 +80,16 @@ export function FutureEvents() {
     <div>
       <h1 className="eventsHeader">Upcoming Events</h1>
       <div className="ctas">
-        <Button variant="contained" onClick={handleClick}>
-          View Past Events
-        </Button>
-        <Button variant="contained" onClick={handleContactClick}>
-          Book Private Event
-        </Button>
+        {location.pathname === "/" && (
+          <>
+            <Button variant="contained" onClick={handleClick}>
+              View Past Events
+            </Button>
+            <Button variant="contained" onClick={handleContactClick}>
+              Book Private Event
+            </Button>
+          </>
+        )}
       </div>
       {eventsArray
         .filter((event) => new Date(event.date) > new Date())
@@ -98,24 +105,26 @@ export function FutureEvents() {
               <Typography variant="body2">{event.description}</Typography>
             </CardContent>
             <CardActions>
-              <add-to-calendar-button
-                className="add-to-cal"
-                name="Albufera Paella Club Pop-up"
-                options="'Apple','Google','Microsoft365'"
-                startDate={new Date(event.date).toISOString().split("T")[0]}
-                endDate={new Date(event.date).toISOString().split("T")[0]}
-                startTime="14:00"
-                endTime="20:00"
-                timeZone="America/New_York"
-                location={event.location}
-                description={
-                  event.description ||
-                  "Join us for an amazing paella experience!"
-                }
-              />
-            </CardActions>
-            <CardActions>
-              <DeleteEvent eventId={event.id} />
+              {location.pathname === "/" && (
+                <add-to-calendar-button
+                  className="add-to-cal"
+                  name="Albufera Paella Club Pop-up"
+                  options="'Apple','Google','Microsoft365'"
+                  startDate={new Date(event.date).toISOString().split("T")[0]}
+                  endDate={new Date(event.date).toISOString().split("T")[0]}
+                  startTime="14:00"
+                  endTime="20:00"
+                  timeZone="America/New_York"
+                  location={event.location}
+                  description={
+                    event.description ||
+                    "Join us for an amazing paella experience!"
+                  }
+                />
+              )}
+              {location.pathname === "/events" && (
+                <DeleteEvent eventId={event.id} />
+              )}
             </CardActions>
           </Card>
         ))}
