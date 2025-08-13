@@ -22,11 +22,21 @@ export default function FaqAccordion() {
           <AccordionSummary>
             What does a typical menu look like?
           </AccordionSummary>
-          <AccordionDetails>Test content</AccordionDetails>
+          <AccordionDetails>
+            At pop-up events, we typically serve 3 types of paella: Valencian,
+            Marisco (seafood), and Vegan. If you are booking a private event, we
+            can tailor which paellas are offered to your needs.
+          </AccordionDetails>
         </Accordion>
         <Accordion>
           <AccordionSummary>What makes a paella Valencian?</AccordionSummary>
-          <AccordionDetails>Test content</AccordionDetails>
+          <AccordionDetails>
+            A traditional Valencian paella includes: Chicken, rabbit, flat green
+            beans (bajoqueta), and large white beans (garrafo). Valencians call
+            paellas with any other ingredients "rice with stuff." A Valencian
+            paella will never mix land and sea, and is typically eaten for lunch
+            around 3-4pm.
+          </AccordionDetails>
         </Accordion>
         <Accordion>
           <AccordionSummary>
@@ -38,13 +48,21 @@ export default function FaqAccordion() {
           <AccordionSummary>
             How many people can 1 paella serve?
           </AccordionSummary>
-          <AccordionDetails>Test content</AccordionDetails>
+          <AccordionDetails>
+            It all depends on the size of paella pan and thickness of the rice.
+            We can serve a wide range of audiences, from intimate dinner parties
+            of a dozen to parties of 40+ people.
+          </AccordionDetails>
         </Accordion>
         <Accordion>
           <AccordionSummary>
             How far in advance can I book a private event?
           </AccordionSummary>
-          <AccordionDetails>Test content</AccordionDetails>
+          <AccordionDetails>
+            Please plan to reach out to us 1 month in advance so we can iron out
+            any details. We require at least 3 weeks lede time in order to book
+            a private event.
+          </AccordionDetails>
           <AccordionActions>
             <Button variant="contained" onClick={handleContactClick}>
               Book Now
