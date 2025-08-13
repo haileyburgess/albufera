@@ -53,7 +53,7 @@ export function EventForm() {
   if (error) return <p>Sorry! There was a bug. {error}</p>;
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <h1 className="eventsHeader">Add a New Event</h1>
       <label>
         Location

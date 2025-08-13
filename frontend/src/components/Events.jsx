@@ -43,12 +43,14 @@ export default function Events() {
               </Typography>
               <Typography variant="body2">{event.description}</Typography>
             </CardContent>
-            <CardActions>
+            {/* <CardActions>
               <Button size="small">Learn More</Button>
+            </CardActions> */}
+            <CardActions>
+              <UpdateEvent eventId={event.id} />
             </CardActions>
           </Card>
         ))}
-      <EventForm></EventForm>
     </div>
   );
 }
@@ -125,6 +127,9 @@ export function FutureEvents() {
               {location.pathname === "/events" && (
                 <DeleteEvent eventId={event.id} />
               )}
+            </CardActions>
+            <CardActions>
+              <UpdateEvent eventId={event.id} />
             </CardActions>
           </Card>
         ))}
