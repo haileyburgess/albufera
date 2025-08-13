@@ -2,6 +2,7 @@ import useQuery from "../api/useQuery";
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { useAuth } from "../auth/AuthContext";
+import { Button } from "@mui/material";
 
 export function EventForm() {
   const authData = useAuth();
@@ -12,7 +13,8 @@ export function EventForm() {
     date: "",
     description: "",
   });
-
+  const [success, setSuccess] = useState("");
+  const [showForm, setShowForm] = useState(false);
   const eventsArray = Array.isArray(events) ? events : [events];
 
   const handleChange = (event) => {
@@ -22,7 +24,11 @@ export function EventForm() {
       [name]: value,
     }));
   };
-  const [success, setSuccess] = useState("");
+
+  const handleToggleForm = () => {
+    setShowForm((prev) => !prev);
+    setSuccess("");
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -53,37 +59,44 @@ export function EventForm() {
   if (error) return <p>Sorry! There was a bug. {error}</p>;
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1 className="eventsHeader">Add a New Event</h1>
-      <label>
-        Location
-        <input
-          type="text"
-          name="location"
-          value={inputs.location || ""}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Date
-        <input
-          type="date"
-          name="date"
-          value={inputs.date || ""}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Description
-        <input
-          type="text"
-          name="description"
-          value={inputs.description || ""}
-          onChange={handleChange}
-        />
-      </label>
-      <input className="button" type="submit" />
-      {success && <div>{success}</div>}
-    </form>
+    <div>
+      <Button variant="contained" onClick={handleToggleForm}>
+        {showForm ? "Cancel" : "Add Event"}
+      </Button>
+      {showForm && (
+        <form onSubmit={handleSubmit}>
+          <h1 className="eventsHeader">Add a New Event</h1>
+          <label>
+            Location
+            <input
+              type="text"
+              name="location"
+              value={inputs.location || ""}
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            Date
+            <input
+              type="date"
+              name="date"
+              value={inputs.date || ""}
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            Description
+            <input
+              type="text"
+              name="description"
+              value={inputs.description || ""}
+              onChange={handleChange}
+            />
+          </label>
+          <input className="button" type="submit" />
+          {success && <div>{success}</div>}
+        </form>
+      )}
+    </div>
   );
 }
