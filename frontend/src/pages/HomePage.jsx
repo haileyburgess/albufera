@@ -8,7 +8,6 @@ export default function HomePage() {
       <div className="logo">
         <img
           src="/assets/logo.png"
-          className="logo"
           alt="Drawing of paella and wine glasses"
         ></img>
       </div>
