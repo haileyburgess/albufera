@@ -4,7 +4,7 @@ import HomepageImageList from "../components/ImageList";
 
 export default function HomePage() {
   return (
-    <div className="home">
+    <div>
       <div className="logo">
         <img
           src="/assets/logo.png"
