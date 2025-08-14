@@ -39,11 +39,10 @@ export default function HomePage() {
       <div className="homeEvents">
         <FutureEvents />
       </div>
-      <div className="logo">
+      <div>
         <img
           src="/logo.png"
-          width={auto}
-          height={auto}
+          className="logo"
           alt="Drawing of paella and wine glasses"
         ></img>
       </div>
