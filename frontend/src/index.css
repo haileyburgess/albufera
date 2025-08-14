@@ -128,7 +128,7 @@ nav ul {
 }
 .insta {
   grid-column: 2;
-  grid-row: 1 / 4;
+  grid-row: 2 / 4;
 }
 
 /* Home page components */

@@ -22,21 +22,19 @@ export default function Navbar() {
         <li>
           <NavLink to="/contact">Get in touch</NavLink>
         </li>
-        <li>
-          <NavLink to="/login">Admin Login</NavLink>
-        </li>
+        {!token && (
+          <li>
+            <NavLink to="/login">Admin Login</NavLink>
+          </li>
+        )}
         <li className="insta">
           <a
             href="https://www.instagram.com/albuferapaellaclub/"
             className="fa fa-instagram fa-2x"
           ></a>
         </li>
-
         {token && (
           <>
-            {/* <li>
-              <NavLink to="/admin">Admin</NavLink>
-            </li> */}
             <li>
               <button className="button" onClick={logout}>
                 Log out
