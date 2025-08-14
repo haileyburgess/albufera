@@ -23,7 +23,7 @@ body a:link {
   font-family: "header-font";
   font-style: normal;
   font-weight: bold;
-  font-size: clamp(2rem, 5vw, 4rem); /* Responsive font size */
+  font-size: clamp(4rem, 7vw, 6rem); /* Responsive font size */
   align-items: center;
   width: 100%;
   justify-content: center;
@@ -35,7 +35,7 @@ body a:link {
 
 @media screen and (max-width: 480px) {
   .header {
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(4rem, 7vw, 6rem);
     padding: clamp(4px, 1vw, 8px);
     flex-direction: column; /* Stack content vertically if needed */
   }

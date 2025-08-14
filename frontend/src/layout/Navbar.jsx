@@ -28,10 +28,14 @@ export default function Navbar() {
           </li>
         )}
         <li className="insta">
-          <a
+          <NavLink
+            to="https://www.instagram.com/albuferapaellaclub/"
+            className="fa fa-instagram fa-2x"
+          ></NavLink>
+          {/* <a
             href="https://www.instagram.com/albuferapaellaclub/"
             className="fa fa-instagram fa-2x"
-          ></a>
+          ></a> */}
         </li>
         {token && (
           <>
