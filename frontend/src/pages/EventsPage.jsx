@@ -6,14 +6,14 @@ import { InstagramEmbed } from "react-social-media-embed";
 export default function EventsPage() {
   return (
     <div className="events">
+      <div className="event-form">
+        <EventForm />
+      </div>
       <div className="future-events">
         <FutureEvents />
       </div>
       <div className="past-events">
         <Events />
-      </div>
-      <div className="event-form">
-        <EventForm />
       </div>
       <div
         className="insta"
