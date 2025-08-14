@@ -35,10 +35,9 @@ body a:link {
 
 @media screen and (max-width: 480px) {
   .header {
-    font-size: clamp(1rem, 5vw, 2rem);
+    font-size: clamp(2rem, 5vw, 4rem);
     padding: clamp(4px, 1vw, 8px);
     flex-direction: column; /* Stack content vertically if needed */
-    gap: 0.5rem; /* Add space between stacked items */
   }
 }
 
@@ -127,6 +126,7 @@ nav ul {
     display: flex;
     flex-direction: column; /* Stack content vertically if needed */
     gap: 0.5rem; /* Add space between stacked items */
+    margin: 0px;
   }
 }
 .event-form {

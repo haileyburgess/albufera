@@ -5,6 +5,13 @@ import HomepageImageList from "../components/ImageList";
 export default function HomePage() {
   return (
     <div className="home">
+      <div className="logo">
+        <img
+          src="/assets/logo.png"
+          className="logo"
+          alt="Drawing of paella and wine glasses"
+        ></img>
+      </div>
       <div>
         <h3>From Valencia to Brooklyn</h3>
         <p className="about">
@@ -38,13 +45,6 @@ export default function HomePage() {
       </div>
       <div className="homeEvents">
         <FutureEvents />
-      </div>
-      <div>
-        <img
-          src="/assets/logo.png"
-          className="logo"
-          alt="Drawing of paella and wine glasses"
-        ></img>
       </div>
     </div>
   );
