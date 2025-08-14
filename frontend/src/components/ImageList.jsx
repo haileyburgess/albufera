@@ -28,27 +28,27 @@ export default function HomepageImageList() {
 
 const itemData = [
   {
-    img: "/hero.jpg",
+    img: "/assets/hero.jpg",
     title: "Paella de Marisco",
   },
   {
-    img: "/chef.png",
+    img: "/assets/chef.png",
     title: "Chef",
   },
   {
-    img: "/valenciana.png",
+    img: "/assets/valenciana.png",
     title: "Paella Valenciana",
   },
   {
-    img: "/chefs.jpg",
+    img: "/assets/chefs.jpg",
     title: "Chefs",
   },
   {
-    img: "/storefront.jpg",
+    img: "/assets/storefront.jpg",
     title: "Sign outside wine bar",
   },
   {
-    img: "/serving.jpg",
+    img: "/assets/serving.jpg",
     title: "Chefs serving paella at an early event",
   },
 ];

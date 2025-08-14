@@ -41,7 +41,7 @@ export default function HomePage() {
       </div>
       <div>
         <img
-          src="/logo.png"
+          src="/assets/logo.png"
           className="logo"
           alt="Drawing of paella and wine glasses"
         ></img>
