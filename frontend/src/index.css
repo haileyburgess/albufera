@@ -23,7 +23,7 @@ body a:link {
   font-family: "header-font";
   font-style: normal;
   font-weight: bold;
-  font-size: clamp(1.5rem, 4vw, 3rem); /* Responsive font size */
+  font-size: clamp(2rem, 5vw, 4rem); /* Responsive font size */
   align-items: center;
   width: 100%;
   justify-content: center;
@@ -150,6 +150,14 @@ nav ul {
   grid-template-rows: auto auto auto;
   margin: 30px;
 }
+/* Mobile version */
+@media screen and (max-width: 480px) {
+  .home {
+    display: flex;
+    flex-direction: column; /* Stack content vertically if needed */
+    gap: 0.5rem; /* Add space between stacked items */
+  }
+}
 
 .about {
   display: grid;
@@ -183,7 +191,7 @@ nav ul {
   grid-row: 1/ 2;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 70%;
   height: "auto";
 }
 
