@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { NavLink } from "react-router-dom";
 
 import { useAuth } from "../auth/AuthContext";
@@ -21,6 +21,9 @@ export default function Navbar() {
         </li>
         <li>
           <NavLink to="/contact">Get in touch</NavLink>
+        </li>
+        <li>
+          <NavLink to="/login">Admin Login</NavLink>
         </li>
         <li className="insta">
           <a
