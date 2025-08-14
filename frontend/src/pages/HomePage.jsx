@@ -6,13 +6,6 @@ export default function HomePage() {
   return (
     <div className="home">
       <div>
-        <img
-          src="/assets/logo.png"
-          className="logo"
-          alt="Drawing of paella and wine glasses"
-        ></img>
-      </div>
-      <div>
         <h3>From Valencia to Brooklyn</h3>
         <p className="about">
           We're a Brooklyn-based pop-up dedicated to making real paella the way
@@ -39,6 +32,13 @@ export default function HomePage() {
             varieties. All of our paellas are cooked on-site and over flame.
           </p>
         </div>
+      </div>
+      <div>
+        <img
+          src="/assets/logo.png"
+          className="logo"
+          alt="Drawing of paella and wine glasses"
+        ></img>
       </div>
       <div className="imageGrid">
         <HomepageImageList />
