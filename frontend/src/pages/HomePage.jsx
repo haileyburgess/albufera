@@ -5,9 +5,10 @@ import HomepageImageList from "../components/ImageList";
 export default function HomePage() {
   return (
     <div className="home">
-      <div className="logo">
+      <div>
         <img
           src="/assets/logo.png"
+          className="logo"
           alt="Drawing of paella and wine glasses"
         ></img>
       </div>
