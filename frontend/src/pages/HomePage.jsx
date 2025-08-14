@@ -42,8 +42,8 @@ export default function HomePage() {
       <div className="logo">
         <img
           src="/logo.png"
-          width={350}
-          height={350}
+          width={auto}
+          height={auto}
           alt="Drawing of paella and wine glasses"
         ></img>
       </div>

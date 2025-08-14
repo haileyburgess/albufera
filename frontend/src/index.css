@@ -23,11 +23,23 @@ body a:link {
   font-family: "header-font";
   font-style: normal;
   font-weight: bold;
-  font-size: 15vh;
+  font-size: clamp(1.5rem, 4vw, 3rem); /* Responsive font size */
   align-items: center;
+  width: 100%;
   justify-content: center;
   color: #2328fa;
-  padding: 10px;
+  padding: clamp(8px, 2vw, 16px); /* Responsive padding */
+  text-align: center; /* Ensures text centers on wrap */
+  flex-wrap: wrap; /* Allows content to wrap if needed */
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    font-size: clamp(1rem, 5vw, 2rem);
+    padding: clamp(4px, 1vw, 8px);
+    flex-direction: column; /* Stack content vertically if needed */
+    gap: 0.5rem; /* Add space between stacked items */
+  }
 }
 
 nav ul {
