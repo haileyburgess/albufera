@@ -42,7 +42,13 @@ export default function FaqAccordion() {
           <AccordionSummary>
             What are the ingredients in your paellas?
           </AccordionSummary>
-          <AccordionDetails>Test content</AccordionDetails>
+          <AccordionDetails>
+            In a Paella Valenciana, you can expect: Chicken, Rabbit, bajoqueta,
+            and garrafo.<br></br> In a Paella de Marisco, we include shrimp,
+            squid, monkfish, and a salmorreta broth. <br></br> Vegetarian/vegan
+            paella will include bajoqueta, garrafo, artichoke, onion, green
+            peppers, and asparagus.
+          </AccordionDetails>
         </Accordion>
         <Accordion>
           <AccordionSummary>
@@ -60,7 +66,7 @@ export default function FaqAccordion() {
           </AccordionSummary>
           <AccordionDetails>
             Please plan to reach out to us 1 month in advance so we can iron out
-            any details. We require at least 3 weeks lede time in order to book
+            any details. We require at least 3 weeks lead time in order to book
             a private event.
           </AccordionDetails>
           <AccordionActions>
