@@ -85,7 +85,7 @@ export function FutureEvents() {
         {location.pathname === "/" && (
           <>
             <Button variant="contained" onClick={handleClick}>
-              View Past Events
+              View All Events
             </Button>
             <Button variant="contained" onClick={handleContactClick}>
               Book Private Event

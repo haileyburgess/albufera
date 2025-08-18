@@ -9,7 +9,7 @@ body {
 }
 @font-face {
   font-family: "header-font";
-  src: url("./src/hk-grotesk/HKGrotesk-Bold.otf") format("opentype");
+  src: url("/assets/hk-grotesk/HKGrotesk-Bold.otf") format("opentype");
   font-weight: bold;
   font-style: normal;
 }
@@ -193,7 +193,7 @@ nav ul {
   align-items: flex-start;
 }
 
-.logo {
+/* .logo {
   display: grid;
   grid-column: 2;
   grid-row: 1/ 2;
@@ -202,6 +202,25 @@ nav ul {
   align-content: center;
   width: 70%;
   height: "auto";
+} */
+
+.logo {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center; /* Center horizontally in grid cell */
+  align-self: center; /* Center vertically in grid cell */
+  display: flex;
+  justify-content: center; /* Center content within container */
+  align-items: center; /* Center content within container */
+  width: 85%; /* Take up most of the grid box */
+  height: auto;
+}
+
+.logo img {
+  /* width: 200px; Set explicit width */
+  height: auto;
+  display: block;
+  max-width: 100%; /* Prevent overflow on small screens */
 }
 
 .add-to-cal {
