@@ -99,7 +99,7 @@ export function FutureEvents() {
           <Card className="cards" key={event.id}>
             <CardContent>
               <Typography gutterBottom>
-                {new Date(event.date + "T00:00:00").toLocaleDateString()}
+                {new Date(event.date).toLocaleDateString()}
               </Typography>
               <Typography variant="h5" component="div">
                 {event.location}
