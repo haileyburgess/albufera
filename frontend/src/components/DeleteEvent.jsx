@@ -28,12 +28,15 @@ export function DeleteEvent({ eventId, onDelete }) {
   const handleDelete = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch(`http://localhost:3000/events/${eventId}`, {
-        method: "DELETE",
-        headers: {
-          Authorization: "Bearer " + authData.token,
-        },
-      });
+      const response = await fetch(
+        `https://albufera-api.onrender.com/events/${eventId}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: "Bearer " + authData.token,
+          },
+        }
+      );
       if (!response.ok) {
         throw new Error("Deleting event failed");
       }

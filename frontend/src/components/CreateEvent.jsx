@@ -33,7 +33,7 @@ export function EventForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch("http://localhost:3000/events", {
+      const response = await fetch("https://albufera-api.onrender.com/events", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
