@@ -6,7 +6,7 @@ import { useAuth } from "../auth/AuthContext";
 export default function Navbar() {
   const { token, logout } = useAuth();
   return (
-    <nav className="navbar">
+    <nav className="nav">
       <ul>
         <li>
           <NavLink id="brand" to="/">
@@ -20,11 +20,11 @@ export default function Navbar() {
           <NavLink to="/faq">FAQs</NavLink>
         </li>
         <li>
-          <NavLink to="/contact">Get in touch</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
         </li>
         {!token && (
           <li>
-            <NavLink to="/login">Admin Login</NavLink>
+            <NavLink to="/login">Admin</NavLink>
           </li>
         )}
         <li className="insta">
@@ -32,10 +32,6 @@ export default function Navbar() {
             to="https://www.instagram.com/albuferapaellaclub/"
             className="fa fa-instagram fa-2x"
           ></NavLink>
-          {/* <a
-            href="https://www.instagram.com/albuferapaellaclub/"
-            className="fa fa-instagram fa-2x"
-          ></a> */}
         </li>
         {token && (
           <>
