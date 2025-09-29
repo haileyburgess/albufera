@@ -12,8 +12,8 @@ import morgan from "morgan";
 
 app.use(
   cors({
-    // origin: "http://localhost:5173",
-    origin: "https://albuferapaella.netlify.app",
+    origin: "http://localhost:5174",
+    // origin: "https://albuferapaella.netlify.app",
     credentials: "true",
     allowedHeaders: ["Content-Type", "Authorization"],
   })
